@@ -1,0 +1,42 @@
+{
+  "name": "simanta-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test tests/e2e/frontend-mvp.spec.ts",
+    "test:a11y": "playwright test tests/e2e/a11y.spec.ts",
+    "verify:mvp": "npm run check && npm run test && npm run build && npm run test:e2e && npm run test:a11y"
+  },
+  "dependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.70.1",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tailwindcss/postcss": "^4.1.17",
+    "lucide-svelte": "^0.468.0",
+    "maplibre-gl": "^5.24.0",
+    "svelte": "^5.43.3",
+    "vite": "^7.2.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.60.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "@testing-library/svelte": "^5.4.2",
+    "@types/node": "^24.10.1",
+    "jsdom": "^29.1.1",
+    "svelte-check": "^4.3.4",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true
+  }
+}
